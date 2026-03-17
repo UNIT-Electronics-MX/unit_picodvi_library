@@ -1,0 +1,39 @@
+#######################################
+# Syntax Coloring Map For upicodvi
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PicoDVI	KEYWORD1
+DVIGFX16	KEYWORD1
+DVIGFX8	KEYWORD1
+DVIGFX1	KEYWORD1
+DVItext1	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+swap	KEYWORD2
+setColor	KEYWORD2
+setColorPair	KEYWORD2
+dvi_serialiser_cfg	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+DVI_RES_320x240p60	LITERAL1
+DVI_RES_400x240p60	LITERAL1
+DVI_RES_640x480p60	LITERAL1
+DVI_RES_800x600p60	LITERAL1
+DVI_RES_960x540p60	LITERAL1
+DVI_RES_1280x720p60	LITERAL1
+
+adafruit_feather_dvi_cfg	LITERAL1
+pimoroni_demo_hdmi_cfg	LITERAL1
+pico_sock_cfg	LITERAL1
+devlab_dvi_cfg	LITERAL1

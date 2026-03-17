@@ -1,13 +1,22 @@
-// "Flying toasters" example for PicoDVI library. If just starting out,
-// see the 8bit_double_buffer which explains the PicoDVI groundwork.
+// "Flying toasters" example for upicodvi library. If just starting out,
+// see the 8bit_double_buffer which explains the upicodvi groundwork.
 // Comments in THIS file are mostly distinct & new concepts.
 
 // IF NO OUTPUT OR RED FLICKER SCANLINES: try Tools->Optimize->(-O3)
 
-#include <PicoDVI.h>
+#include <upicodvi.h>
 #include "sprites.h" // Graphics data
 
-DVIGFX8 display(DVI_RES_320x240p60, true, adafruit_feather_dvi_cfg);
+// Configuración DevLab
+static const struct dvi_serialiser_cfg devlab_dvi_cfg = {
+  .pio = pio0,
+  .sm_tmds = {0, 1, 2},
+  .pins_tmds = {14, 12, 8},
+  .pins_clk = 10,
+  .invert_diffpairs = false
+};
+
+DVIGFX8 display(DVI_RES_320x240p60, true, devlab_dvi_cfg);
 
 // See notes in 8bit_double_buffer regarding 400x240 mode.
 //DVIGFX8 display(DVI_RES_400x240p60, true, adafruit_feather_dvi_cfg);
@@ -129,7 +138,7 @@ what could be improved?
   efficiently and to de-pack and draw sprite data straight to framebuffer,
   but would likely increase source code 2-3X and confuse novices.
 - The sprite data is all stored in flash memory, which is slower to access
-  than RAM. RAM is scarce (perhaps ~64K after PicoDVI claims a framebuffer),
+  than RAM. RAM is scarce (perhaps ~64K after upicodvi claims a framebuffer),
   but the sprites might still fit, especially if packed 2 pixels/byte. It's
   not a bottleneck now AS WRITTEN (due to drawGrayscaleBitmap() itself being
   a bit pokey), but if sprite-drawing were handled as mentioned above, could

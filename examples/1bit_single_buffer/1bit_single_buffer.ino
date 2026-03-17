@@ -1,6 +1,6 @@
-// Simple 1-bit Adafruit_GFX-compatible framebuffer for PicoDVI.
+// Simple 1-bit Adafruit_GFX-compatible framebuffer for upicodvi.
 
-#include <PicoDVI.h>
+#include <upicodvi.h>
 
 // Here's how a 640x480 1-bit (black, white) framebuffer is declared.
 // Second argument ('false' here) means NO double-buffering; all drawing

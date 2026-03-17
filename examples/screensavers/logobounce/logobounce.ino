@@ -1,13 +1,22 @@
-// "Logo bounce" example for PicoDVI library. If just starting out,
-// see the 1bit_double_buffer which explains the PicoDVI groundwork.
+// "Logo bounce" example for upicodvi library. If just starting out,
+// see the 1bit_double_buffer which explains the upicodvi groundwork.
 // Comments in THIS file are mostly distinct & new concepts.
 
 // IF NO OUTPUT OR RED FLICKER SCANLINES: try Tools->Optimize->(-O3)
 
-#include <PicoDVI.h>
+#include <upicodvi.h>
 #include "sprite.h" // Graphics data
 
-DVIGFX1 display(DVI_RES_640x480p60, true, adafruit_feather_dvi_cfg);
+// Configuración DevLab
+static const struct dvi_serialiser_cfg devlab_dvi_cfg = {
+  .pio = pio0,
+  .sm_tmds = {0, 1, 2},
+  .pins_tmds = {14, 12, 8},
+  .pins_clk = 10,
+  .invert_diffpairs = false
+};
+
+DVIGFX1 display(DVI_RES_320x240p60, true, devlab_dvi_cfg);
 
 // See notes in 1bit_double_buffer regarding 800x480 mode.
 //DVIGFX1 display(DVI_RES_800x480p60, true, adafruit_feather_dvi_cfg);

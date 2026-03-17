@@ -1,6 +1,6 @@
 // 8-bit Adafruit_GFX-compatible framebuffer for PicoDVI.
 
-#include <PicoDVI.h>
+#include <upicodvi.h>
 
 // Here's how a 320x240 8-bit (color-paletted) framebuffer is declared.
 // Second argument ('false' here) means NO double-buffering; all drawing

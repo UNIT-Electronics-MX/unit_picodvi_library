@@ -1,7 +1,7 @@
-// Basic full-color PicoDVI test. Provides a 16-bit color video framebuffer to
+// Basic full-color upicodvi test. Provides a 16-bit color video framebuffer to
 // which Adafruit_GFX calls can be made. It's based on the EYESPI_Test.ino sketch.
 
-#include <PicoDVI.h>                  // Core display & graphics library
+#include <upicodvi.h>                  // Core display & graphics library
 #include <Fonts/FreeSansBold18pt7b.h> // A custom font
 
 // Here's how a 320x240 16-bit color framebuffer is declared. Double-buffering

@@ -3,12 +3,12 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
 /*!
- * @file PicoDVI.cpp
+ * @file upicodvi.cpp
  *
- * Arduino-and-Adafruit-GFX wrapper around Luke Wren's PicoDVI library.
+ * Arduino-and-Adafruit-GFX wrapper around Luke Wren's upicodvi library.
  */
 
-#include "PicoDVI.h"
+#include "upicodvi.h"
 #include "libdvi/tmds_encode.h"
 
 // PicoDVI class encapsulates some of the libdvi functionality -------------

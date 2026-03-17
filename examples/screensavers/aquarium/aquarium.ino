@@ -5,10 +5,19 @@
 
 // IF NO OUTPUT OR RED FLICKER SCANLINES: try Tools->Optimize->(-O3)
 
-#include <PicoDVI.h>
+#include <upicodvi.h>
 #include "sprites.h" // Graphics data
 
-DVIGFX8 display(DVI_RES_320x240p60, true, adafruit_feather_dvi_cfg);
+// Configuración DevLab
+static const struct dvi_serialiser_cfg devlab_dvi_cfg = {
+  .pio = pio0,
+  .sm_tmds = {0, 1, 2},
+  .pins_tmds = {14, 12, 8},
+  .pins_clk = 10,
+  .invert_diffpairs = false
+};
+
+DVIGFX8 display(DVI_RES_800x240p30, true, devlab_dvi_cfg);
 
 // See notes in 8bit_double_buffer regarding 400x240 mode.
 //DVIGFX8 display(DVI_RES_400x240p60, true, adafruit_feather_dvi_cfg);

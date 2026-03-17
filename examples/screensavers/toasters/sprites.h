@@ -1,4 +1,4 @@
-// Graphics data for the flying toasters PicoDVI example.
+// Graphics data for the flying toasters upicodvi example.
 // These tables were generated using Python/PIL code on the desktop
 // to read images and extract individual pixel values. That code is
 // NOT included here; this is a quick goofy project and that was messy
@@ -6,7 +6,7 @@
 // but also because ImageMagick's "convert" tool has this capability
 // built-in and probably should just use that. :)
 
-// PicoDVI's DVIGFX8 can handle up to 256 colors, but all the graphics
+// upicodvi's DVIGFX8 can handle up to 256 colors, but all the graphics
 // in this example use just 16 colors. These are in "RGB565" format.
 const uint16_t palette[] = {
   0x0000, 0xEF7D, 0xCE79, 0x9CD3, 0x8C51, 0xFE6C, 0x632C, 0x52AA,

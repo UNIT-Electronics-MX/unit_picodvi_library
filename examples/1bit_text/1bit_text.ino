@@ -1,6 +1,6 @@
 // 1-bit (black, white) text mode for PicoDVI.
 
-#include <PicoDVI.h>
+#include <upicodvi.h>
 
 // Here's how an 80x30 character display is declared. First argument,
 // resolution, is full display pixel count...character cells are 8x8 pixels,

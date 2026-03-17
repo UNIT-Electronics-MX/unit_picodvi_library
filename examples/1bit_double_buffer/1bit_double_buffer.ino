@@ -1,7 +1,7 @@
-// Double-buffered 1-bit Adafruit_GFX-compatible framebuffer for PicoDVI.
+// Double-buffered 1-bit Adafruit_GFX-compatible framebuffer for upicodvi.
 // Animates without redraw flicker. Requires Adafruit_GFX >= 1.11.5
 
-#include <PicoDVI.h>
+#include <upicodvi.h>
 
 // Here's how a 640x480 1-bit (black, white) framebuffer is declared.
 // Second argument ('true' here) enables double-buffering for flicker-free

@@ -1,7 +1,7 @@
 // Double-buffered 8-bit Adafruit_GFX-compatible framebuffer for PicoDVI.
 // Animates without redraw flicker. Requires Adafruit_GFX >= 1.11.4
 
-#include <upicodvi.h>
+#include <upicodvi.h>                  // Core display & graphics library
 
 // Here's how a 320x240 8-bit (color-paletted) framebuffer is declared.
 // Second argument ('true' here) enables double-buffering for flicker-free
@@ -9,7 +9,18 @@
 // written for Adafruit Feather RP2040 DVI, but that's easily switched out
 // for boards like the Pimoroni Pico DV (use 'pimoroni_demo_hdmi_cfg') or
 // Pico DVI Sock ('pico_sock_cfg').
-DVIGFX8 display(DVI_RES_320x240p60, true, adafruit_feather_dvi_cfg);
+
+static const struct dvi_serialiser_cfg devlab_dvi_cfg = {
+
+.pio = pio0,
+.sm_tmds = {0,1,2},
+.pins_tmds = {14,12,8},  // Configuración correcta
+.pins_clk = 10,
+.invert_diffpairs = false
+
+};
+
+DVIGFX8 display(DVI_RES_320x240p60, true, devlab_dvi_cfg);
 
 // A 400x240 mode is possible but pushes overclocking even higher than
 // 320x240 mode. SOME BOARDS MIGHT SIMPLY NOT BE COMPATIBLE WITH THIS.

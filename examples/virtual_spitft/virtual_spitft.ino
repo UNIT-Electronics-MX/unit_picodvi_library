@@ -2,7 +2,7 @@
 // over 4-wire SPI interface, mimicking functionality of displays such as
 // ST7789 or ILI9341, but shown on an HDMI monitor instead.
 
-#include <PicoDVI.h> // Core display & graphics library
+#include <upicodvi.h> // Core display & graphics library
 
 // Configurables ----
 

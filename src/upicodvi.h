@@ -3,9 +3,9 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
 /*!
- * @file PicoDVI.h
+ * @file upicodvi.h
  *
- * Arduino-and-Adafruit-GFX wrapper around Luke Wren's PicoDVI library.
+ * Arduino-and-Adafruit-GFX wrapper around Luke Wren's upicodvi library.
  */
 
 #pragma once
@@ -36,7 +36,7 @@ extern bool dvi_monochrome_tmds;    ///< In libdvi/dvi.c
 
 /*!
   @brief  A base class used by some of the framebuffer classes that follow.
-          Wraps essential functionality of the underlying PicoDVI library.
+          Wraps essential functionality of the underlying upicodvi library.
           Maybe only rarely (if ever) needed in Arduino sketch code, but
           it's here if a project requires working at a lower level to
           provide features not present in the framebuffer modes.
@@ -112,7 +112,7 @@ public:
   bool begin(void);
   /*!
     @brief   Convert a 24-bit RGB color (as three 8-bit values) to a packed
-             16-bit "RGB565" color, as native to PicoDVI and Adafruit_GFX.
+             16-bit "RGB565" color, as native to upicodvi and Adafruit_GFX.
     @param   red    Red component, 0-255.
     @param   green  Green component, 0-255.
     @param   blue   Blue component, 0-255.
@@ -181,7 +181,7 @@ public:
   /*!
     @brief   Set one color in the 'back' color palette (or single palette in
              single-buffered mode). Accepts three 8-bit values, but COLOR
-             WILL BE QUANTIZED TO 16-BIT RGB565 because that's what PicoDVI
+             WILL BE QUANTIZED TO 16-BIT RGB565 because that's what upicodvi
              uses. Original 24-bit value is LOST and cannot be accurately
              read back by getColor().
     @param   idx    Color index to set, 0-255.
@@ -275,7 +275,7 @@ public:
   void swap(bool copy_framebuffer = false);
 
   /*!
-    @brief  Video main loop handler invoked by underlying PicoDVI code.
+    @brief  Video main loop handler invoked by underlying upicodvi code.
             User sketch code should never call this, but it needs to be
             public so that C code can access it.
   */
@@ -336,7 +336,7 @@ public:
   */
   void _prepare_scanline(uint16_t y);
   /*!
-    @brief  Video main loop handler invoked by underlying PicoDVI code.
+    @brief  Video main loop handler invoked by underlying upicodvi code.
             User sketch code should never call this, but it needs to be
             public so that C code can access it.
   */

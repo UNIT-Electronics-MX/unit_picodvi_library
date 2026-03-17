@@ -1,13 +1,22 @@
-// "Boing" ball example for PicoDVI library, If just starting out,
-// see the 8bit_double_buffer which explains the PicoDVI groundwork.
+// "Boing" ball example for upicodvi library, If just starting out,
+// see the 8bit_double_buffer which explains the upicodvi groundwork.
 // Comments in THIS file are mostly distinct & new concepts.
 // Adapted from PyPortal example in Adafruit_ILI9341 library.
 
-#include <PicoDVI.h>
+#include <upicodvi.h>
 #include "graphics.h" // Graphics data
 
+// Configuración DevLab
+static const struct dvi_serialiser_cfg devlab_dvi_cfg = {
+  .pio = pio0,
+  .sm_tmds = {0, 1, 2},
+  .pins_tmds = {14, 12, 8},
+  .pins_clk = 10,
+  .invert_diffpairs = false
+};
+
 // 4:3 aspect for that Amiga flavour:
-DVIGFX8 display(DVI_RES_320x240p60, true, adafruit_feather_dvi_cfg);
+DVIGFX8 display(DVI_RES_320x240p60, true, devlab_dvi_cfg);
 
 #define YBOTTOM   123  // Ball Y coord at bottom
 #define YBOUNCE  -3.5  // Upward velocity on ball bounce

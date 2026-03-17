@@ -26,7 +26,7 @@ drive setup. See notes below about perhaps adding a boot switch to USB-mount
 CIRCUITPY only when needed; it's more stable if left unmounted.
 */
 
-#include <PicoDVI.h>       // For DVI video out
+#include <upicodvi.h>       // For DVI video out
 #include <Adafruit_CPFS.h> // For accessing the CIRCUITPY drive
 
 FatVolume *fs = NULL; // CIRCUITPY flash filesystem, as a FAT pointer
